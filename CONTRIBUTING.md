@@ -1,5 +1,7 @@
 # Contribuindo com o PeabiruJobs
 
+> Novo no projeto? Comece pelo **[guia de onboarding](docs/onboarding.md)** — acessos, setup local e primeira contribuição.
+
 ## Fluxo de trabalho
 
 1. **Crie uma branch** a partir da principal:
