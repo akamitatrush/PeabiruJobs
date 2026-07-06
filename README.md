@@ -488,6 +488,19 @@ A documentação completa vive em [`docs/`](docs/), separada por disciplina — 
 
 ---
 
+## 👥 Time
+
+<div align="center">
+
+**Bianca Matos** · **Caroline Guilmo** · **Cicero Janiel** · **Daniel Scharf** · **Fernanda Alves** · **Jonatan Jamar** · **Sérgio Henrique**
+
+<sub>Contribuições são feitas por Pull Request e revisadas em conjunto — qualquer pessoa do time pode revisar e aprovar.<br/>
+Novo por aqui? Comece pelo [onboarding](docs/onboarding.md) e pelo [guia do Claude Code](docs/claude-code.md).</sub>
+
+</div>
+
+---
+
 <div align="center">
 
 **PeabiruJobs** não promete contratação e não inventa experiências.<br/>

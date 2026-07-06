@@ -10,6 +10,20 @@
 
 **O ponto mais importante deste guia:** todo o trabalho vira um **Pull Request no GitHub**. É assim que o time vê, revisa e aprova o que você fez — **qualquer colaborador pode revisar e aprovar**; não existe um "dono" que decide sozinho, as decisões são tomadas em conjunto. Você não precisa de acesso à Vercel, ao Supabase nem a qualquer outra ferramenta — **o GitHub é o ponto de encontro de tudo**.
 
+### 📖 Dicionário mínimo (leia antes — 1 minuto)
+
+Estes 7 termos aparecem o tempo todo. Sem eles, o resto do guia parece grego:
+
+| Termo | O que significa, sem enrolação |
+| --- | --- |
+| **Repositório** | A pasta do projeto hospedada no GitHub — todo o código, documentação e histórico vivem lá |
+| **Branch** | Uma "cópia paralela" do projeto onde você trabalha sem afetar a versão oficial (a branch `main`). O Claude cria uma para cada tarefa |
+| **Commit** | Um "ponto de salvamento" com descrição do que mudou. O Claude faz isso por você |
+| **Pull Request (PR)** | O pedido formal de "quero levar minhas mudanças para a versão oficial". É a unidade de entrega do time: tem descrição, mostra cada mudança e é onde acontece a revisão |
+| **Merge** | O ato de aceitar um PR e incorporar as mudanças na `main`. Depois do merge, vai para produção automaticamente |
+| **CI** | Robô que testa cada PR sozinho (roda o build do projeto). ✅ verde = não quebrou nada; ❌ vermelho = tem problema |
+| **Preview** | Uma cópia temporária do site no ar com as mudanças do seu PR, para ver funcionando antes de aprovar |
+
 ---
 
 ## 2. O que você precisa ANTES de começar (checklist única)
@@ -43,10 +57,34 @@ Só isso. Nada de Vercel, nada de Supabase, nada de instalar programa (no caminh
    > Na landing page, na seção "Como funciona", o passo 2 diz "Informe um cargo-alvo ou uma vaga". Quero deixar mais claro que a vaga é opcional. Troque por algo como "Informe seu cargo-alvo (e uma vaga específica, se tiver)". Rode o build para garantir que nada quebrou e **abra um Pull Request** com a mudança.
 
 3. **Acompanhe o Claude trabalhando** — você vê na tela ele lendo arquivos, editando e rodando comandos. Pode interromper e redirecionar a qualquer momento ("espera, na verdade quero outro texto")
+   - 😌 **Pode fechar a aba sem medo:** a sessão fica salva em claude.ai/code e continua de onde parou quando você voltar
 4. **Ao final, ele te dá o link do Pull Request.** Esse link é o seu entregável
+   - 🔍 **Perdeu o link?** Ele está em dois lugares: na aba **Pull requests** do repositório (github.com/akamitatrush/PeabiruJobs → Pull requests) e no e-mail que o GitHub te mandou
 5. **Cole o link no canal do time.** Qualquer colaborador pode revisar e aprovar. Fim da sua parte
 
 > 💡 O repositório tem um arquivo `CLAUDE.md` que toda sessão lê automaticamente — o Claude já conhece as convenções e as regras do produto. Você não precisa explicar o projeto.
+
+### 🎯 Sua primeira sessão — roteiro garantido (30 minutos)
+
+Não estreie com uma tarefa de verdade. Siga esta trilha de 3 degraus, do risco zero ao primeiro PR:
+
+**Degrau 1 — Investigação (risco zero, não muda nada).** Abra uma sessão e cole:
+
+> Me explique, como se eu não fosse técnico, o que este projeto faz e como o código está organizado. Depois me diga: se eu quisesse mudar um texto da landing page, qual arquivo seria?
+
+Objetivo: sentir como é conversar com o Claude dentro do projeto e ver que ele responde sobre o código de verdade. Nada é alterado.
+
+**Degrau 2 — Mudança de brincadeira (aprende o ciclo, sem abrir PR).** Na mesma sessão:
+
+> Mude alguma coisa pequena num texto da landing page e me mostre o antes/depois. NÃO abra PR — é só para eu ver como você trabalha. Depois desfaça a mudança.
+
+Objetivo: ver o Claude editando e desfazendo, sem consequência nenhuma.
+
+**Degrau 3 — Primeiro PR de verdade (pequeno e útil).** Sessão nova, tarefa mínima:
+
+> No arquivo `docs/onboarding.md`, na seção de dúvidas frequentes, adicione a pergunta "[uma dúvida real que você teve ao entrar]" com a resposta que você me ajudar a escrever. Rode o build e abra um Pull Request.
+
+Objetivo: percorrer o ciclo completo — pedido → PR → CI verde → colar o link no grupo → alguém aprova → merge. Documentação não quebra nada, e a dúvida que você teve provavelmente é a dúvida do próximo. **Depois desse merge, você oficialmente sabe usar o Claude Code neste projeto.**
 
 ---
 
@@ -66,6 +104,7 @@ Requer instalar ferramentas. Se o caminho A te atende, pule esta seção sem cul
    cd PeabiruJobs
    ```
    (o Git vai pedir login do GitHub na primeira vez — siga as instruções na tela)
+   - ⚠️ Esta é a etapa que mais trava iniciantes no terminal (envolve token de acesso do GitHub). **Se emperrar aqui, não perca tempo: volte para o caminho A** — ele não passa por isso
 5. **Inicie o Claude Code** dentro da pasta:
    ```bash
    claude
@@ -148,6 +187,8 @@ O Claude *consegue* fazer tudo — a questão é quem revisa. Como **nada entra 
 | O preview da Vercel pede login | Proteção de preview ativa | Quem administra a Vercel ajusta em *Deployment Protection* (uma vez só) |
 | Duas pessoas mexendo no mesmo arquivo | Falta de combinação | Combine no grupo: uma tarefa por pessoa por vez; tarefas pequenas |
 | "Já existe um PR meu aberto, faço outro?" | — | Termine um antes de começar outro; PRs pequenos saem rápido |
+| Perdi o link do PR / da sessão | — | PRs: aba **Pull requests** do repositório ou e-mail do GitHub. Sessões: ficam salvas em **claude.ai/code** |
+| Fechei a aba no meio do trabalho | Nenhum problema | A sessão fica salva — abra claude.ai/code e continue de onde parou |
 
 ---
 
