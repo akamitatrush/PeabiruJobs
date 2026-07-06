@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🪶 PeabiruJobs
+<img src="public/logo.svg" alt="PeabiruJobs" width="380"/>
 
 ### Mentor de carreira com IA para profissionais brasileiros
 

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ButtonLink } from "@/components/ui/Button";
+import { Logo, LogoMark } from "@/components/ui/Logo";
 
 const HOW_IT_WORKS = [
   {
@@ -56,8 +57,8 @@ export default function LandingPage() {
     <div className="min-h-screen bg-white">
       <header className="border-b border-slate-100">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Link href="/" className="text-lg font-semibold text-brand-700">
-            PeabiruJobs
+          <Link href="/" aria-label="PeabiruJobs">
+            <Logo />
           </Link>
           <nav className="flex items-center gap-3">
             <Link
@@ -167,8 +168,12 @@ export default function LandingPage() {
       </main>
 
       <footer className="border-t border-slate-100 py-8">
-        <div className="mx-auto max-w-6xl px-6 text-center text-sm text-slate-400">
-          © {new Date().getFullYear()} PeabiruJobs. Mentor de carreira com IA.
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 px-6 text-center text-sm text-slate-400">
+          <LogoMark className="h-7 w-auto" />
+          <span>
+            © {new Date().getFullYear()} PeabiruJobs. Mentor de carreira com
+            IA.
+          </span>
         </div>
       </footer>
     </div>
