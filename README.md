@@ -26,7 +26,8 @@
 [Banco de dados](#-modelo-de-dados) •
 [IA](#-camada-de-ia) •
 [Como rodar](#-como-rodar) •
-[Segurança](#-segurança)
+[Segurança](#-segurança) •
+[Documentação](#-documentação)
 
 </div>
 
@@ -448,6 +449,21 @@ npm run dev
 | **Storage** | Bucket privado com policy por pasta: usuário só lê/escreve em `documents/{seu_id}/…` |
 | **Sessão** | Cookies httpOnly gerenciados por `@supabase/ssr`, renovados no middleware |
 | **Chaves** | Apenas a chave *publishable* vai ao cliente (pública por design); nenhuma `service_role` é usada no projeto |
+
+---
+
+## 📚 Documentação
+
+A documentação completa vive em [`docs/`](docs/), separada por disciplina — o README é a porta de entrada; o detalhe fica nos documentos dedicados:
+
+| Documento | Para quem | Conteúdo |
+| --- | --- | --- |
+| [📋 Produto](docs/produto.md) | PO / negócio | Visão, personas, jornada, épicos com user stories e critérios de aceite, regras de negócio, métricas e backlog |
+| [🏗 Arquitetura](docs/arquitetura.md) | Devs (front + back) | Organização do front-end, API, camada de IA, modelo de dados e decisões de arquitetura (ADRs) |
+| [⚙️ DevOps](docs/devops.md) | Devs / infra | Ambientes, deploy na Vercel, variáveis, branches, CI e troubleshooting |
+| [🔒 Segurança](docs/seguranca.md) | Todos | Auth, RLS, Storage, segredos, ameaças × mitigações e LGPD |
+
+**Contribuindo:** o fluxo de branches, convenções e checklist estão no [CONTRIBUTING.md](CONTRIBUTING.md). Todo PR aberto já vem com o [template](.github/PULL_REQUEST_TEMPLATE.md) preenchido, e o [CI](.github/workflows/ci.yml) valida o build automaticamente a cada push.
 
 ---
 
