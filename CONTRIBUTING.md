@@ -29,6 +29,13 @@
 
 Qualquer contribuição que toque na análise de IA deve preservar as regras de autenticidade — não inventar experiências, métricas ou certificações, e nunca prometer contratação. Detalhes em [docs/produto.md](docs/produto.md).
 
+## Revisão de PRs
+
+- **Qualquer colaborador pode revisar e aprovar** — a regra da `main` exige 1 aprovação de qualquer membro, não de uma pessoa específica
+- O [`.github/CODEOWNERS`](.github/CODEOWNERS) solicita revisores automaticamente por área (banco/IA/infra → devs; docs de produto → POs). Ao entrar no time, adicione seu usuário na área que você domina
+- Boas práticas de quem revisa: rodar o preview da Vercel linkado no PR, conferir o "como testar" da descrição e pedir mudanças com comentários específicos
+- Autor não aprova o próprio PR
+
 ## Documentação
 
 | Mudou o quê? | Atualize |

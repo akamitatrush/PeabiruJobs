@@ -1,0 +1,24 @@
+# CODEOWNERS — o GitHub solicita revisão automaticamente aos donos de cada área
+# quando um PR toca nos arquivos correspondentes.
+#
+# Como adicionar alguém: troque/adicione o @usuario-github na linha da área.
+# A última regra que casar com o arquivo vence. Donos precisam ser
+# colaboradores do repositório.
+#
+# Para tornar essas revisões OBRIGATÓRIAS: Settings → Branches → regra da main
+# → marcar "Require review from Code Owners".
+
+# Padrão: tudo que não casar com regras abaixo
+* @akamitatrush
+
+# ---- Áreas técnicas (adicione os devs do time) ----
+# Banco de dados, migrations e RLS
+supabase/ @akamitatrush
+# Camada de IA (prompts e regras de autenticidade)
+lib/ai/ @akamitatrush
+# Infra e CI
+.github/ @akamitatrush
+
+# ---- Áreas de produto (adicione os POs do time) ----
+# Documentação de produto e negócio
+docs/ @akamitatrush
