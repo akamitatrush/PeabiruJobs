@@ -66,7 +66,11 @@ flowchart LR
 - [ ] Primeira branch criada a partir da `main`
 - [ ] Primeiro PR aberto com o template preenchido e CI verde
 
-## 6. Dúvidas frequentes
+## 6. Não é dev? Contribua mesmo assim
+
+POs e perfis não-técnicos podem contribuir via **Claude Code** (texto, documentação, ajustes de UI, investigações) sem tocar em terminal — o fluxo de PR + CI + review protege tudo. Guia completo: **[docs/claude-code.md](claude-code.md)**.
+
+## 7. Dúvidas frequentes
 
 | Pergunta | Resposta |
 | --- | --- |

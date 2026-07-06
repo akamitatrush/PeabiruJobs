@@ -463,6 +463,7 @@ A documentação completa vive em [`docs/`](docs/), separada por disciplina — 
 | [⚙️ DevOps](docs/devops.md) | Devs / infra | Ambientes, deploy na Vercel, variáveis, branches, CI e troubleshooting |
 | [🔒 Segurança](docs/seguranca.md) | Todos | Auth, RLS, Storage, segredos, ameaças × mitigações e LGPD |
 | [🚀 Onboarding](docs/onboarding.md) | Novos membros do time | Acessos, setup local, leitura de contexto e primeira contribuição |
+| [🤖 Guia do Claude Code](docs/claude-code.md) | Todos, inclusive não-técnicos | Como POs e devs contribuem via Claude Code: setup, como pedir bem, limites e prompts prontos |
 
 **Contribuindo:** o fluxo de branches, convenções e checklist estão no [CONTRIBUTING.md](CONTRIBUTING.md). Todo PR aberto já vem com o [template](.github/PULL_REQUEST_TEMPLATE.md) preenchido, e o [CI](.github/workflows/ci.yml) valida o build automaticamente a cada push.
 
