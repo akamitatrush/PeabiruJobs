@@ -458,7 +458,10 @@ A documentação completa vive em [`docs/`](docs/), separada por disciplina — 
 
 | Documento | Para quem | Conteúdo |
 | --- | --- | --- |
-| [📋 Produto](docs/produto.md) | PO / negócio | Visão, personas, jornada, épicos com user stories e critérios de aceite, regras de negócio, métricas e backlog |
+| [📋 Produto](docs/produto.md) | PO / negócio | Épicos com user stories e critérios de aceite, regras de negócio, métricas e backlog |
+| [📃 One Page](docs/one-page.md) | PO / negócio / mentoria | Visão completa do discovery: problema, dados de mercado, matriz CSD, modelo de negócio e posicionamento |
+| [🗺 Jornada do Usuário](docs/jornada-usuario.md) | PO / UX | Os 3 momentos do discovery detalhados fase a fase: emoções, telas, fricções e momentos da verdade |
+| [📄 PRD](docs/prd.md) | PO / devs | Requisitos priorizados (MoSCoW) com rastreabilidade para o que está construído, hipóteses, riscos e critérios de release |
 | [🏗 Arquitetura](docs/arquitetura.md) | Devs (front + back) | Organização do front-end, API, camada de IA, modelo de dados e decisões de arquitetura (ADRs) |
 | [⚙️ DevOps](docs/devops.md) | Devs / infra | Ambientes, deploy na Vercel, variáveis, branches, CI e troubleshooting |
 | [🔒 Segurança](docs/seguranca.md) | Todos | Auth, RLS, Storage, segredos, ameaças × mitigações e LGPD |

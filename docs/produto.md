@@ -1,6 +1,8 @@
 # 📋 Documentação de Produto (PO)
 
 > Documento vivo. Fonte da verdade sobre **o que** o PeabiruJobs faz e **por quê** — decisões de escopo, personas, histórias de usuário e critérios de aceite.
+>
+> **Suíte de artefatos de PO:** [One Page (visão + discovery)](one-page.md) · [Jornada do Usuário detalhada](jornada-usuario.md) · [PRD com requisitos e rastreabilidade](prd.md) · este documento (épicos e user stories)
 
 ## 1. Visão do produto
 
