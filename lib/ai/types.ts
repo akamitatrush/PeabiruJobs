@@ -12,6 +12,10 @@ export interface CareerAnalysisInput {
   target_seniority: string | null;
   job_description_text: string | null;
   complementary_files_text: string | null;
+  // Fase 2: jargões curados da área-alvo (tabela market_jargons),
+  // injetados no prompt. Null quando a área não tem curadoria.
+  market_terms: string[] | null;
+  market_terms_note: string | null;
 }
 
 export interface AnalysisSummary {

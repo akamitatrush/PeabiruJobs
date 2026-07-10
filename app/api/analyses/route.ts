@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { generateCareerAnalysis } from "@/lib/ai/generateCareerAnalysis";
+import { matchJargons, type JargonRow } from "@/lib/ai/jargons";
 import type { DocumentType } from "@/lib/types";
 
 export const maxDuration = 60;
@@ -119,7 +120,21 @@ export async function POST(request: Request) {
     }
   }
 
-  // 3. Gera a análise (mock ou IA real, conforme AI_PROVIDER)
+  // 3. Fase 2 da IA: consulta os jargões curados da área-alvo.
+  // Fallback silencioso: sem tabela ou sem área correspondente, segue sem termos.
+  let jargons: JargonRow | null = null;
+  const { data: jargonRows, error: jargonsError } = await supabase
+    .from("market_jargons")
+    .select("area, keywords, terms, usage_note");
+  if (!jargonsError) {
+    jargons = matchJargons(
+      jargonRows as JargonRow[] | null,
+      payload.target_area ?? null,
+      payload.target_role
+    );
+  }
+
+  // 4. Gera a análise (mock ou IA real, conforme AI_PROVIDER)
   try {
     const result = await generateCareerAnalysis({
       user_id: user.id,
@@ -132,9 +147,11 @@ export async function POST(request: Request) {
       target_seniority: payload.target_seniority ?? null,
       job_description_text: payload.job_description_text ?? null,
       complementary_files_text: payload.complementary_files_text ?? null,
+      market_terms: jargons?.terms ?? null,
+      market_terms_note: jargons?.usage_note ?? null,
     });
 
-    // 4. Persiste recomendações, diagnósticos e plano
+    // 5. Persiste recomendações, diagnósticos e plano
     const [recsResult, fitsResult, planResult] = await Promise.all([
       supabase.from("recommendations").insert(
         result.recommendations.map((rec) => ({
@@ -189,7 +206,7 @@ export async function POST(request: Request) {
       throw childError;
     }
 
-    // 5. Atualiza a análise com o resumo executivo
+    // 6. Atualiza a análise com o resumo executivo
     const { error: updateError } = await supabase
       .from("career_analyses")
       .update({
@@ -204,7 +221,7 @@ export async function POST(request: Request) {
 
     if (updateError) throw updateError;
 
-    // 6. Reanálise: registra o vínculo e o comparativo com a análise original
+    // 7. Reanálise: registra o vínculo e o comparativo com a análise original
     if (payload.original_analysis_id) {
       const { data: original } = await supabase
         .from("career_analyses")

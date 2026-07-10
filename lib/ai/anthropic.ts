@@ -171,6 +171,14 @@ function buildUserMessage(input: CareerAnalysisInput): string {
     input.complementary_files_text
       ? `\n===== MATERIAIS COMPLEMENTARES =====\n${input.complementary_files_text}`
       : null,
+    // Fase 2: prompt de ferramenta — jargões curados da área (docs/ia.md §3)
+    input.market_terms && input.market_terms.length > 0
+      ? `\n===== TERMOS DE MERCADO DESTA ÁREA =====\nUse estes termos com precisão e APENAS quando a experiência real do usuário sustentar: ${input.market_terms.join(", ")}.${
+          input.market_terms_note
+            ? `\nOrientação de uso: ${input.market_terms_note}`
+            : ""
+        }`
+      : null,
     "\nGere a análise completa em JSON conforme o schema.",
   ].filter(Boolean) as string[];
   return parts.join("\n");

@@ -43,6 +43,8 @@ export function generateMockAnalysis(
   const hasJob = Boolean(input.job_description_text);
   const hasLinkedin = Boolean(input.linkedin_text || input.linkedin_url);
   const resumeSnippet = extractSnippet(input.resume_text);
+  // Fase 2: jargões curados da área (quando existirem) substituem os genéricos
+  const areaTerms = input.market_terms ?? [];
 
   const recommendations: AnalysisRecommendation[] = [
     {
@@ -82,11 +84,10 @@ export function generateMockAnalysis(
         "A descrição está genérica e não evidencia demandas apoiadas, ferramentas usadas ou impacto da atuação.",
       suggested_text:
         "Apoio às rotinas operacionais da equipe, contribuindo para a organização de demandas, controle de informações e execução de atividades administrativas do dia a dia.",
-      market_language_terms: [
-        "apoio operacional",
-        "organização de demandas",
-        "gestão de rotina",
-      ],
+      market_language_terms:
+        areaTerms.length > 0
+          ? areaTerms.slice(0, 5)
+          : ["apoio operacional", "organização de demandas", "gestão de rotina"],
       authenticity_warning:
         "Use esta versão apenas se essas atividades realmente fizeram parte da sua experiência.",
     },
@@ -129,7 +130,10 @@ export function generateMockAnalysis(
       original_text: null,
       identified_issue: null,
       suggested_text: null,
-      market_language_terms: ["hard skills", "requisitos", "gap de competência"],
+      market_language_terms:
+        areaTerms.length > 5
+          ? areaTerms.slice(5, 9)
+          : ["hard skills", "requisitos", "gap de competência"],
       authenticity_warning: null,
     },
     {

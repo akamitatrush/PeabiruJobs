@@ -95,7 +95,7 @@ Ver [produto.md §2](produto.md#2-personas): Persona A "Recolocação urgente" (
 | RF-5.2 | Estrutura: texto original → problema identificado → versão sugerida | Must | ✅ |
 | RF-5.3 | Competências implícitas e termos de mercado relacionados | Must | ✅ |
 | RF-5.4 | **Alerta de autenticidade em toda sugestão de texto** | Must (inviolável) | ✅ |
-| RF-5.5 | Jargões curados por área para precisão terminológica | Should | 📋 Fase 2 da IA — proposta em [docs/ia.md §3](ia.md) |
+| RF-5.5 | Jargões curados por área para precisão terminológica | Should | ✅ Fase 2 implementada: tabela `market_jargons` (10 áreas) injetada no prompt — [docs/ia.md §3](ia.md) |
 
 ### RF-6 · Plano de evolução + reanálise (Funcionalidade 4)
 
